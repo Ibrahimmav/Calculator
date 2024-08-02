@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="calcu.css">
+    <script>
+        let text = "";
+        function cal(x){
+            text = text + x;
+            document.getElementById('math').innerHTML=text;
+        }
+        function ans(){
+            
+            document.getElementById('ans').innerHTML=eval(text);
+        }
+        function clr(){
+            text = "";
+            document.getElementById('math').innerHTML=text;
+            document.getElementById('ans').innerHTML=text;
+        }
+        function reci(){
+            text = "1/("+text+")";
+            document.getElementById('ans').innerHTML=eval(text);
+        }
+
+        function back(){
+            text = text.substring(0, text.length-1);
+            document.getElementById('math').innerHTML=text;
+            
+        }
+    </script>
+    <title>Calculator</title>
+</head>
+<body>
+    <div id="Container">
+        <div id="display">
+            <p id="math" style="margin-left: 10px; width: 290px;"></p>
+            <p id="ans" style="margin-left: 10px;"></p>
+        </div>
+        
+        <div id="numC" onsubmit="ans()">
+            <div id="digi" onclick="reci()">1/x</div>
+            <div id="digi" onclick="cal('%')">%</div>
+            <div id="digi" onclick="back()"> DE</div>
+            <div id="digi" onclick="clr()">AC</div>
+            <div id="digi" onclick="cal(7)">7</div>
+            <div id="digi" onclick="cal(8)">8</div>
+            <div id="digi" onclick="cal(9)">9</div>
+            <div id="digi" onclick="cal('*')">*</div>
+            <div id="digi" onclick="cal(6)">6</div>
+            <div id="digi" onclick="cal(5)">5</div>
+            <div id="digi" onclick="cal(4)">4</div>
+            <div id="digi" onclick="cal('-')">-</div>
+            <div id="digi" onclick="cal(3)">3</div>
+            <div id="digi" onclick="cal(2)">2</div>
+            <div id="digi" onclick="cal(1)">1</div>
+            <div id="digi" onclick="cal('+')">+</div>
+            <div id="digi" onclick="cal(0)">0</div>
+            <div id="digi" onclick="cal('/')">/</div>
+            <div id="digi" onclick="cal('.')">.</div>
+            <div id="digi" onclick="ans()">=</div>
+            
+        </div>
+    </div>
+</body>
+</html>
